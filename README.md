@@ -37,19 +37,55 @@ Diff = A ⊕ B ⊕ Bin
 Borrow out = A'Bin + A'B + BBin
 
 **Truthtable**
+Full adder
+
+<img width="474" height="388" alt="image" src="https://github.com/user-attachments/assets/fb603126-f983-4f46-a30b-c1949bf1030c" />
+
+Full subractor
+
+<img width="453" height="316" alt="image" src="https://github.com/user-attachments/assets/da52e6de-c824-4eab-8d42-b7f558c4fc1f" />
 
 **Procedure**
 
-Write the detailed procedure here
+ 1. Type the program in Quartus software.
+ 2. Compile and run the program.
+ 3. Generate the RTL schematic and save the logic diagram.
+ 4. Create nodes for inputs and outputs to generate the timing diagram.
+ 5. For different input combinations generate the timing diagram.
 
 **Program:**
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. 
+
+i)FULL ADDER
+
+module fa(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+assign sum=( (a ^ b)^cin);
+assign carry= ( (a & b)| ( cin &(a ^ b )));
+endmodule
+
+ii)FULL SUBTRACTOR
+
+module fs(a,b,bin,difference,borrow);
+input a,b,bin;
+output difference,borrow;
+assign difference= ( (a ^ b)^bin);
+assign borrow= ( ( a & b)| ( bin & ((a ^ b ))));
+endmodule
 
 **RTL Schematic**
+Full adder
+<img width="816" height="404" alt="image" src="https://github.com/user-attachments/assets/e52622af-dc11-48a6-8cd4-e90ee3c6d1ae" />
+Full subractor
+<img width="810" height="395" alt="image" src="https://github.com/user-attachments/assets/92bda9de-659a-4784-9c87-7ae9ad4cc76f" />
 
 **Output Timing Waveform**
+Fulladder
+<img width="787" height="405" alt="image" src="https://github.com/user-attachments/assets/23e9aed9-4b8f-4334-869a-b4bd8b66f1ff" />
+full subractor
+<img width="775" height="384" alt="image" src="https://github.com/user-attachments/assets/d236b89f-f9be-4295-b556-307953a74a6e" />
 
 **Result:**
 
